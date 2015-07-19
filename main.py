@@ -11,12 +11,26 @@ import urllib
 from datetime import datetime as dt
 
 
+# === Classify Text Type ===
+# To classify input text data into text types(ex. URL, ProgrammingLangage...)
+def classifyTextType(inputData):
+	if inputData.count('http') and inputData.count('://'):
+		print 'This data is URL.'
+	else:
+		print 'I dont know this data type.'
+	return
 
 
+def userInput(message):
+	print message,
+	data = raw_input(" -> ")
+	return data
 
 
+# === MAIN ===
 def main():
-	# main program
+	data = userInput("Please, type of something")
+	classifyTextType(data)
 
 
 if __name__ == "__main__":
